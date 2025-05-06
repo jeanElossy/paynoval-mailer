@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/send-email', async (req, res) => {
+  console.log('📨 Reçu /send-email payload:', req.body);
   const { email, subject, htmlContent } = req.body;
 
   if (!email || !subject || !htmlContent) {
